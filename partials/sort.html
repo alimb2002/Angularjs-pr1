@@ -1,0 +1,31 @@
+
+ 
+<div id="salary" ng-controller="sortController">
+	<h3>Angular filters</h3>
+	<p><input type="text" name="search" placeholder="search" ng-model="searchText.name"></p>
+
+	<table>
+		<thead>
+			<tr>
+				<th ng-click="sortFunc('name')">Name :</th>
+				<th ng-click="sortFunc('dateOfBirth')">Dade of Birth :</th>
+				<th>Gender :</th>
+				<th>Sallary (filter by Numbers) :</th>
+				<th>Sallary (filter by currency) :</th>
+			</tr>
+		</thead>
+
+<tr ng-repeat="employee in employees | filter:searchText | orderBy : sortColumn :sortRev ">
+	<td>{{employee.name}}</td>
+	<td>{{employee.dateOfBirth | date :"dd/MM/yyyy"}}</td>
+	<td>{{employee.gender}}</td>
+	<td>{{employee.salary | number:2}}</td>
+	<td>{{employee.salary | currency : "IRR":1}}</td>
+</tr>
+
+		</thead>
+	</table>
+
+</div>
+
+

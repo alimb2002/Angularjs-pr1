@@ -1,0 +1,32 @@
+<div id="salary" ng-controller="filterController">
+	<h3>Angular filters</h3>
+<p>Rows To Display : <input type="number" step="1" min="0" max="5" ng-model="rowLimit"></p>
+<p>sorting : <select ng-model="sortCol">
+	<option value="name">Name ASC :</option>
+	<option value="gender">Gender ASC :</option>
+	<option value="dateOfBirth">date of birth ASC :</option>
+	<option value="-salary">Salary DESC :</option>
+</select>
+	<table>
+		<thead>
+			<tr>
+				<th>Name :</th>
+				<th>Dade of Birth :</th>
+				<th>Gender :</th>
+				<th>Sallary (filter by Numbers) :</th>
+				<th>Sallary (filter by currency) :</th>
+			</tr>
+		</thead>
+
+<tr ng-repeat="employee in employees | limitTo : rowLimit | orderBy :sortCol ">
+	<td><a href="#!employee/{{$index}}"> {{employee.name}}</a> </td>
+	<td>{{employee.dateOfBirth | date :"dd/MM/yyyy"}}</td>
+	<td>{{employee.gender}}</td>
+	<td>{{employee.salary | number:2}}</td>
+	<td>{{employee.salary | currency : "IRR":1}}</td>
+</tr>
+
+		</thead>
+	</table>
+
+</div>

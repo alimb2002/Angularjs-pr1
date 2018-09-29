@@ -1,0 +1,20 @@
+<article >
+	<div ng-app="myApp" ng-controller="techController">
+	<table>
+		<thead>
+			<td>name</td>
+            <td>likes</td>
+            <td>dislikes</td>
+            <td>likes / dislikes</td>
+		</thead>
+
+		<tr ng-repeat="tech in technologies">
+			<td>{{ tech.name }}</td>
+			<td>{{ tech.likes }}</td>
+			<td>{{ tech.dislikes }}</td>
+			<td><button ng-click="add(tech)">Likes</button>  / 
+			 <button ng-click="sub(tech)">disLikes</button></td>
+		</tr>
+	</table>
+</div>
+</article>

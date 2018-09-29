@@ -1,0 +1,16 @@
+<main  ng-controller="myController">
+<h2>Colors</h2>
+
+<ul>
+	<li ng-repeat=" color in colors"> 
+		<p> Color Name :<b> {{color.color}} </b></p>
+		<p> Color Category :<b> {{color.category}} </b></p>
+		<p> Color Type :<b> {{color.type}} </b></p>
+     	<p >Color HEX :<b>{{color.code.hex}}</b></p>
+     	<p >Color RGBA :<b>{{color.code.rgba}}</b></p>
+     
+	</li>
+</ul>
+<button ng-click="reloadData()">reload</button>
+
+</main>

@@ -1,0 +1,26 @@
+<div id="salary" ng-controller="filterController">
+	<h3>Angular filters</h3>
+ 
+	<table>
+		<thead>
+			<tr>
+				<th>Name :</th>
+				<th>Dade of Birth :</th>
+				<th>Gender :</th>
+				<th>Sallary (filter by Numbers) :</th>
+				<th>Sallary (filter by currency) :</th>
+			</tr>
+		</thead>
+
+<tr ng-model="employees">
+	<td>{{employees[nameItem].name}} </td>
+	<td>{{employees[nameItem].dateOfBirth | date :"dd/MM/yyyy"}}</td>
+	<td>{{employees[nameItem].gender}}</td>
+	<td>{{employees[nameItem].salary | number:2}}</td>
+	<td>{{employees[nameItem].salary | currency : "IRR":1}}</td>
+</tr>
+
+		</thead>
+	</table>
+
+</div>
